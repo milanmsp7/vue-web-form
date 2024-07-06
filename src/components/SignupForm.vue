@@ -14,7 +14,8 @@
     </select>
 
     <label>Skills:</label>
-    <input type="text" v-model="tempSkill" @keyup.alt="addSkill">
+    <!-- <input type="text" v-model="tempSkill" @keyup.alt="addSkill"> -->
+    <input type="text" v-model="tempSkill" @keyup.ctrl="addSkill">
     <div v-for="skill in skills" :key="skill" class="pill">
         <span @click="deleteSkill(skill)">{{ skill }} </span>
     </div>
@@ -45,9 +46,9 @@
   <p>Email: {{ email }}</p>
   <p>Password: {{ password }}</p>
   <p>Role: {{ role }}</p>
-  <p>Skills: {{ role }}</p>
+  <p>Skills: {{ skils }}</p>
   <p>Terms: {{ terms }}</p>
-  <p>Names: {{ names }}</p>
+  <!-- <p>Names: {{ names }}</p> -->
 </template>
 
 <script>
@@ -128,6 +129,7 @@ export default {
         margin: 0 10px 0 0;
         position: relative;
         top: 2px;
+        cursor: pointer;
     }
     .pill {
         display: inline-block;
@@ -148,6 +150,7 @@ export default {
         margin-top: 20px;
         color: white;
         border-radius: 20px;
+        cursor: pointer;
     }
     .submit {
         text-align: center;
